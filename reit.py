@@ -31,10 +31,12 @@ df_filtered = df[df['Name'].isin(selected_reits)]
 # Plotting
 fig, ax = plt.subplots(figsize=(15, 10))
 
+# Using ordered years for x-axis
+years_ordered = ['2019', '2020', '2021', '2022', '2023']
+
 # Loop through each row (REIT) in the filtered dataframe and plot its data
 for index, row in df_filtered.iterrows():
-    ax.plot(['2023', '2022', '2021', '2019', '2020'], [row['DPS:2023'], row['DPS:2022'],
-            row['DPS:2021'], row['DPS:2019'], row['DPS:2020']], label=row['Name'])
+    ax.plot(years_ordered, [row['DPS:2019'], row['DPS:2020'], row['DPS:2021'], row['DPS:2022'], row['DPS:2023']], label=row['Name'])
 
 # Adding title and labels
 ax.set_title("DPS Data for Selected Years per REIT")
