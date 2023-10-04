@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 @st.cache
 def load_data():
     df = pd.read_excel(
-        "/Users/spencerkyle/Documents/SA_REIT_Property_Fund_Data/Bloomberg_Terminal_REIT_Data/DPS 2023 to 2019.xlsx")
+        "DPS 2023 to 2019.xlsx")
     df_cleaned = df.iloc[2:].reset_index(drop=True)
     return df_cleaned
 
